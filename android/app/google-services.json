@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "604700227805",
+    "project_id": "mazzameraapp",
+    "storage_bucket": "mazzameraapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604700227805:android:d8097b7201102248188334",
+        "android_client_info": {
+          "package_name": "com.example.mazzamera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604700227805-43fqoi3teafhtcoosvs30e4oq2a7acco.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mazzamera",
+            "certificate_hash": "9812d38b2a12e096c80c5aa5405949040bc16ef4"
+          }
+        },
+        {
+          "client_id": "604700227805-gsekt0jfk2krjibu9827v5lap14c94gv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAs_sYTnBY3dmoEvg5idDm4EN40MVEpYpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604700227805-gsekt0jfk2krjibu9827v5lap14c94gv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
