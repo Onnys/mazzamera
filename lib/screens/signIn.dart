@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mazzamera/components/button.dart';
+import 'package:mazzamera/constants.dart';
 import 'package:mazzamera/screens/mazzamera_home.dart';
 
 class SignIn extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SignInState extends State<SignIn> {
   Icon icon = Icon(Icons.remove_red_eye);
   bool seePassword = true;
   final _formKey = GlobalKey<FormState>();
-  String _email, _password, _name, _imageUrl;
+  String _email, _password;
   bool hidebutton = true, ignore = false;
   final _auth = FirebaseAuth.instance;
   double opacity = 1;
@@ -106,7 +107,7 @@ class _SignInState extends State<SignIn> {
       user = (await _auth.signInWithCredential(credential)).user;
       if (user != null) {
         _email = user.email;
-        _imageUrl = user.photoURL;
+        
         Navigator.pushNamedAndRemoveUntil(context, Home.id, (route) => false);
         setState(() {
           opacity = 1;
@@ -188,10 +189,7 @@ class _SignInState extends State<SignIn> {
               centerTitle: true,
               title: Text(
                 'Sign In',
-                style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400),
+                style: KTextDecoration,
               ),
             ),
             body: Column(

@@ -8,7 +8,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:mazzamera/main.dart';
 import 'package:mazzamera/screens/welcome.dart';
 
 void main() {

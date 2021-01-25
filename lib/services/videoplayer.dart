@@ -80,12 +80,12 @@ class ButterFlyNetworkVideoState extends State<ButterFlyNetworkVideo> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(widget.video);
-
     _controller.addListener(() {
       setState(() {});
     });
     _controller.setLooping(true);
-    _controller.initialize().then((_) => setState(() {}));
+    _controller.initialize().then((value) => setState((){}));
+    
     _controller.pause();
   }
 
@@ -102,13 +102,13 @@ class ButterFlyNetworkVideoState extends State<ButterFlyNetworkVideo> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(top: 1.0),
           ),
           
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(8),
             child: AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
+              aspectRatio: 3/2,
               child: Stack(
                 alignment: Alignment.bottomCenter,
                 children: <Widget>[
@@ -168,6 +168,7 @@ class _ControlsOverlay extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
+            
             controller.value.isPlaying ? controller.pause() : controller.play();
           },
         ),

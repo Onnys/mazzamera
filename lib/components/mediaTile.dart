@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MediaTile extends StatelessWidget {
-  String title, trailingText;
+  final String title, trailingText;
 
-  Function onTap;
-  MediaTile({@required this.title,@required this.trailingText, this.onTap});
+  final Function onTap;
+  MediaTile({@required this.title, @required this.trailingText, this.onTap});
   @override
   Widget build(BuildContext context) {
     return ListTile(

@@ -8,10 +8,10 @@ class Button extends StatelessWidget {
       @required this.labelColor,
       this.onPressed,
       @required this.hasIcon});
-  String label;
-  Color color, labelColor;
-  Function onPressed;
-  bool hasIcon;
+  final String label;
+  final Color color, labelColor;
+  final Function onPressed;
+  final bool hasIcon;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,7 +25,10 @@ class Button extends StatelessWidget {
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    FaIcon(FontAwesomeIcons.google,color: Colors.white38,),
+                    FaIcon(
+                      FontAwesomeIcons.google,
+                      color: Colors.white38,
+                    ),
                     SizedBox(
                       width: 8,
                     ),

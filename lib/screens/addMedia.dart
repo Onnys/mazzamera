@@ -26,17 +26,17 @@ class _AddMediaState extends State<AddMedia> {
   Future<void> uploadFile(String filePath, String type) async {
     File file = File(filePath);
     FocusScope.of(context).unfocus();
-    Map<String, dynamic> media ={};
+    Map<String, dynamic> media = {};
     try {
-      final upload = await firebase_storage.FirebaseStorage.instance
+      await firebase_storage.FirebaseStorage.instance
           .ref('uploads/$title')
           .putFile(file)
           .then((value) async {
-           media ={
-             'type': type,
-          'link': await  value.ref.getDownloadURL(),
+        media = {
+          'type': type,
+          'link': await value.ref.getDownloadURL(),
           'description': description,
-           };
+        };
       });
       await FirebaseFirestore.instance.collection('posts').add(media);
 
@@ -46,10 +46,9 @@ class _AddMediaState extends State<AddMedia> {
       Navigator.pop(context);
     } on firebase_storage.FirebaseException catch (e) {
       // e.g, e.code == 'canceled'
-      if(e.code == 'canceled')
-      _global.currentState.showSnackBar(SnackBar(
-          content: Text(
-              'The post were canceled')));
+      if (e.code == 'canceled')
+        _global.currentState
+            .showSnackBar(SnackBar(content: Text('The post were canceled')));
     }
   }
 
